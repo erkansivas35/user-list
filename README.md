@@ -1,3 +1,3 @@
 # User List
 
-> User list project
+User list project
