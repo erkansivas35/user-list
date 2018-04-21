@@ -36,7 +36,6 @@ export default {
     this.axios
       .get("https://reqres.in/api/users/" + this.usersId)
       .then(response => {
-        console.log(response.data);
         this.userDetails = response.data.data;
       })
       .catch(error => {

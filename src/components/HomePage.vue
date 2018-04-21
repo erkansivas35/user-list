@@ -25,7 +25,6 @@ export default {
     this.axios
       .get("https://reqres.in/api/users?page=1&per_page=20")
       .then(response => {
-        console.log(response.data);
         this.userList = response.data.data;
       });
   },
