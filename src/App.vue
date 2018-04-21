@@ -11,6 +11,10 @@ export default {
 </script>
 
 <style>
+[v-cloak] {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
