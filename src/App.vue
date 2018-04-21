@@ -43,4 +43,13 @@ export default {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 14px;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.m-set {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 </style>

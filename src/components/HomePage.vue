@@ -1,6 +1,7 @@
 <template>
   <div class="homepage">
     <div class="users">
+      <h1 class="text-center m-set">User List</h1>
       <div class="user-list">
         <users v-for="(user, index) in userList"
                :key="index"
