@@ -1,8 +1,10 @@
 <template>
   <div class="homepage">
+     <p v-if="loading" class="text-center m-set">Loading...</p>
+
     <div v-if="!resError" class="user-list">
       
-      <div class="user">
+      <div v-if="!loading" class="user">
         <div class="user-img">
           <img :src="userDetails.avatar" alt="User Name">
         </div>
@@ -29,7 +31,8 @@ export default {
     return {
       userDetails: [],
       usersId: this.$route.params.id,
-      resError: false
+      resError: false,
+      loading: true
     };
   },
   created() {
@@ -37,9 +40,11 @@ export default {
       .get("https://reqres.in/api/users/" + this.usersId)
       .then(response => {
         this.userDetails = response.data.data;
+        this.loading = false
       })
       .catch(error => {
-        this.resError = true
+        this.resError = true,
+        this.loading = false
       });
   }
 };

@@ -1,11 +1,13 @@
 <template>
   <div class="homepage">
-    <div class="users">
-      <h1 class="text-center m-set">User List</h1>
-      <div class="user-list">
+    <div class="users text-center">
+      <h1 class="m-set">User List</h1>
+      <p v-if="loading" class="m-set">Loading...</p>
+      <div v-if="!loading" class="user-list">
         <users v-for="(user, index) in userList"
                :key="index"
-               :user=user></users>
+               :user=user
+               :loading=loading></users>
       </div>
     </div>
   </div>
@@ -18,7 +20,8 @@ export default {
   name: "HomePage",
   data() {
     return {
-      userList: []
+      userList: [],
+      loading: true
     };
   },
   created() {
@@ -26,6 +29,7 @@ export default {
       .get("https://reqres.in/api/users?page=1&per_page=20")
       .then(response => {
         this.userList = response.data.data;
+        this.loading = false;
       });
   },
   components: { Users }
