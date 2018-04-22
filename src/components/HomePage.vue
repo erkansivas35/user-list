@@ -6,8 +6,7 @@
       <div v-if="!loading" class="user-list">
         <users v-for="(user, index) in userList"
                :key="index"
-               :user=user
-               :loading=loading></users>
+               :user=user></users>
       </div>
     </div>
   </div>
