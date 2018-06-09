@@ -9,11 +9,14 @@
                :user=user></users>
       </div>
     </div>
+
+    <CreateUser></CreateUser>
   </div>
 </template>
 
 <script>
 import Users from './Users';
+import CreateUser from './CreateUser';
 
 export default {
   name: "HomePage",
@@ -31,7 +34,7 @@ export default {
         this.loading = false;
       });
   },
-  components: { Users }
+  components: { Users, CreateUser }
 };
 </script>
 

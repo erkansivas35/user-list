@@ -56,4 +56,15 @@ export default {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.create-user {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.create-user * {
+  margin-bottom: 15px;
+}
 </style>
